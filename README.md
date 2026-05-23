@@ -1,6 +1,6 @@
 # Synqora AI 🤖
 
-An advanced AI-powered Multi-Agent research system built using LangChain, LangGraph, Gemini API, Tavily Search, BeautifulSoup, and LCEL Runnable Pipelines.
+An advanced AI-powered Multi-Agent Research System built using LangChain, LangGraph, Gemini API, Tavily Search, BeautifulSoup, and LCEL Runnable Pipelines.
 
 This project is designed to perform intelligent research by combining multiple AI agents, web search capabilities, and web scraping tools into a single automated workflow.
 
