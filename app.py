@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from agents import build_reader_agent, build_search_agent, writer_chain, critic_chain
 
-# ── Page config ──────────────────────────────────────────────────────────────
+# ── Page config
 st.set_page_config(
     page_title="Synqora — AI Research Agent",
     page_icon="🔬",
@@ -10,7 +10,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ── Custom CSS ────────────────────────────────────────────────────────────────
+# ── Custom CSS
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
@@ -311,13 +311,13 @@ def step_card(num: str, title: str, state: str, desc: str = ""):
     """, unsafe_allow_html=True)
 
 
-# ── Session state init ────────────────────────────────────────────────────────
+# ── Session state init 
 for key in ("results", "running", "done"):
     if key not in st.session_state:
         st.session_state[key] = {} if key == "results" else False
 
 
-# ── Hero ──────────────────────────────────────────────────────────────────────
+# ── Hero 
 st.markdown("""
 <div class="hero">
     <div class="hero-eyebrow">Multi-Agent AI System</div>
@@ -331,7 +331,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ── Layout: input left, pipeline right ───────────────────────────────────────
+# ── Layout: input left, pipeline right 
 col_input, col_spacer, col_pipeline = st.columns([5, 0.5, 4])
 
 with col_input:
@@ -394,7 +394,7 @@ with col_pipeline:
     step_card("04", "Critic Chain",  s("critic"), "Reviews & scores the report")
 
 
-# ── Run pipeline ──────────────────────────────────────────────────────────────
+# ── Run pipeline 
 if run_btn:
     if not topic.strip():
         st.warning("Please enter a research topic first.")
@@ -455,7 +455,7 @@ if st.session_state.running and not st.session_state.done:
     st.rerun()
 
 
-# ── Results display ───────────────────────────────────────────────────────────
+# ── Results display 
 r = st.session_state.results
 
 if r:
@@ -500,7 +500,7 @@ if r:
         st.markdown("</div>", unsafe_allow_html=True)
 
 
-# ── Footer ────────────────────────────────────────────────────────────────────
+# ── Footer 
 st.markdown("""
 <div class="notice">
     Synqora · Powered by LangChain multi-agent pipeline · Built with Streamlit
